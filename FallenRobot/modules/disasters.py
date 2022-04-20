@@ -94,7 +94,7 @@ def addsudo(update: Update, context: CallbackContext) -> str:
 
     update.effective_message.reply_text(
         rt
-        + "\nSuccessfully set Disaster level of {} to Dragon!".format(
+        + "\nSuccessfully set Disaster level of {} to senpai!".format(
             user_member.first_name
         )
     )
@@ -155,7 +155,7 @@ def addsupport(
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\n{user_member.first_name} was added as a Demon Disaster!"
+        rt + f"\n{user_member.first_name} was added as a Onii-chan!"
     )
 
     log_message = (
@@ -196,12 +196,12 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "This user is already a Demon Disaster, Demoting to Wolf."
+        rt += "This user is already a Demon Disaster, Demoting to Baka."
         data["supports"].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        message.reply_text("This user is already a Wolf Disaster.")
+        message.reply_text("This user is already a Baka.")
         return ""
 
     data["whitelists"].append(user_id)
@@ -211,7 +211,7 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\nSuccessfully promoted {user_member.first_name} to a Wolf Disaster!"
+        rt + f"\nSuccessfully promoted {user_member.first_name} to a Baka!"
     )
 
     log_message = (
@@ -257,7 +257,7 @@ def addtiger(update: Update, context: CallbackContext) -> str:
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "This user is already a Wolf Disaster, Demoting to Tiger."
+        rt += "This user is already a Baka Disaster, Demoting to Tiger."
         data["whitelists"].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -411,7 +411,7 @@ def removewhitelist(update: Update, context: CallbackContext) -> str:
 
         return log_message
     else:
-        message.reply_text("This user is not a Wolf Disaster!")
+        message.reply_text("This user is not a Baka!")
         return ""
 
 
@@ -460,7 +460,7 @@ def removetiger(update: Update, context: CallbackContext) -> str:
 @run_async
 @whitelist_plus
 def whitelistlist(update: Update, context: CallbackContext):
-    reply = "<b>Known Wolf Disasters 🐺:</b>\n"
+    reply = "<b>Known Baka:</b>\n"
     m = update.effective_message.reply_text(
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
@@ -556,15 +556,15 @@ Commands listed here only work for users with special access are mainly used for
 Group admins/group owners do not need these commands. 
 
 *List all special users:*
- ❍ /senpai*:* Lists all Dragon disasters
- ❍ /oniichan*:* Lists all Demon disasters
+ ❍ /senpai*:* Lists all Senpai
+ ❍ /oniichan*:* Lists all Onii-chan
  ❍ /tigers*:* Lists all Tigers disasters
- ❍ /baka*:* Lists all Wolf disasters
+ ❍ /baka*:* Lists all  Baka
  ❍ /heroes*:* Lists all Hero Association members
- ❍ /addsenpai*:* Adds a user to Dragon
- ❍ /addoniichan*:* Adds a user to Demon
+ ❍ /addsenpai*:* Adds a user to Senpai
+ ❍ /addoniichan*:* Adds a user to Onii-chan
  ❍ /addtiger*:* Adds a user to Tiger
- ❍ /addbaka*:* Adds a user to Wolf
+ ❍ /addbaka*:* Adds a user to Baka
  ❍ `Add dev doesnt exist, devs should know how to add themselves`
 
 *Ping:*
