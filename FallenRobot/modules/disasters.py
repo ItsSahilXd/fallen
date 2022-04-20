@@ -556,15 +556,15 @@ Commands listed here only work for users with special access are mainly used for
 Group admins/group owners do not need these commands. 
 
 *List all special users:*
- ❍ /dragons*:* Lists all Dragon disasters
- ❍ /demons*:* Lists all Demon disasters
+ ❍ /senpai*:* Lists all Dragon disasters
+ ❍ /oniichan*:* Lists all Demon disasters
  ❍ /tigers*:* Lists all Tigers disasters
- ❍ /wolves*:* Lists all Wolf disasters
+ ❍ /baka*:* Lists all Wolf disasters
  ❍ /heroes*:* Lists all Hero Association members
- ❍ /adddragon*:* Adds a user to Dragon
- ❍ /adddemon*:* Adds a user to Demon
+ ❍ /addsenpai*:* Adds a user to Dragon
+ ❍ /addoniichan*:* Adds a user to Demon
  ❍ /addtiger*:* Adds a user to Tiger
- ❍ /addwolf*:* Adds a user to Wolf
+ ❍ /addbaka*:* Adds a user to Wolf
  ❍ `Add dev doesnt exist, devs should know how to add themselves`
 
 *Ping:*
@@ -648,19 +648,19 @@ Group admins/group owners do not need these commands.
 Visit @{SUPPORT_CHAT} for more information.
 """
 
-SUDO_HANDLER = CommandHandler(("addsudo", "adddragon"), addsudo)
-SUPPORT_HANDLER = CommandHandler(("addsupport", "adddemon"), addsupport)
+SUDO_HANDLER = CommandHandler(("addsudo", "addsenpai"), addsudo)
+SUPPORT_HANDLER = CommandHandler(("addsupport", "addoniichan"), addsupport)
 TIGER_HANDLER = CommandHandler(("addtiger"), addtiger)
-WHITELIST_HANDLER = CommandHandler(("addwhitelist", "addwolf"), addwhitelist)
-UNSUDO_HANDLER = CommandHandler(("removesudo", "removedragon"), removesudo)
-UNSUPPORT_HANDLER = CommandHandler(("removesupport", "removedemon"), removesupport)
+WHITELIST_HANDLER = CommandHandler(("addwhitelist", "addbaka"), addwhitelist)
+UNSUDO_HANDLER = CommandHandler(("removesudo", "removesenpai"), removesudo)
+UNSUPPORT_HANDLER = CommandHandler(("removesupport", "removeoniichan"), removesupport)
 UNTIGER_HANDLER = CommandHandler(("removetiger"), removetiger)
-UNWHITELIST_HANDLER = CommandHandler(("removewhitelist", "removewolf"), removewhitelist)
+UNWHITELIST_HANDLER = CommandHandler(("removewhitelist", "removebaka"), removewhitelist)
 
-WHITELISTLIST_HANDLER = CommandHandler(["whitelistlist", "wolves"], whitelistlist)
+WHITELISTLIST_HANDLER = CommandHandler(["whitelistlist", "baka"], whitelistlist)
 TIGERLIST_HANDLER = CommandHandler(["tigers"], tigerlist)
-SUPPORTLIST_HANDLER = CommandHandler(["supportlist", "demons"], supportlist)
-SUDOLIST_HANDLER = CommandHandler(["sudolist", "dragons"], sudolist)
+SUPPORTLIST_HANDLER = CommandHandler(["supportlist", "oniichan"], supportlist)
+SUDOLIST_HANDLER = CommandHandler(["sudolist", "senpai"], sudolist)
 DEVLIST_HANDLER = CommandHandler(["devlist", "heroes"], devlist)
 
 dispatcher.add_handler(SUDO_HANDLER)
