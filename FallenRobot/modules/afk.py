@@ -11,7 +11,7 @@ from FallenRobot.modules.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
-from FallenRobot.modules.sql.afk_redis import start_afk, end_afk, is_user_afk, afk_reason
+from FallenRobot.modules.sql.afk_sql import start_afk, end_afk, is_user_afk, afk_reason
 from FallenRobot import REDIS
 from FallenRobot.modules.users import get_user_id
 
